@@ -1,0 +1,13 @@
+postgre sql queries
+
+
+1.  Name of top10 customers based on payments they've made.
+
+Ans - Select first_name, last_name from customer where customer_id IN (select customer_id from payment group by customer_id order by sum(amount) desc limit 10 ); 
+
+
+2. Mail ids of person who has spend more than $ 100 in total.
+
+Ans: Select email from customer where customer_id IN (select customer_id from payment group by customer_id having sum(amount)>100);
+
+ 
