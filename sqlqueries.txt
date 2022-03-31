@@ -6,7 +6,7 @@ postgre sql queries
 Ans - Select first_name, last_name from customer where customer_id IN (select customer_id from payment group by customer_id order by sum(amount) desc limit 10 ); 
 
 
-2. Mail ids of person who has spend more than $ 100 in total.
+2. Mail ids of person who has spend more than $ 100 in totals.
 
 Ans: Select email from customer where customer_id IN (select customer_id from payment group by customer_id having sum(amount)>100);
 
